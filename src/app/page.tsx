@@ -1,9 +1,35 @@
 import Image from "next/image";
+import { Button } from "@nextui-org/button";
+import { FaDownload } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <main>
-      <h1>NyaUwU.com</h1>
-    </main>
+    <div className="flex items-center justify-center px-6 py-12">
+      <div className="max-w-4xl mx-auto text-center">
+        <h1 className="text-5xl font-bold mb-6">
+          Disfruta del anime en tu escritorio
+        </h1>
+        <p className="text-xl mb-8">
+          NyaUwU te trae la mejor experiencia para ver anime en Windows.
+          Descarga nuestra app y sumérgete en un mundo de anime sin límites.
+        </p>
+        <Button
+          size="lg"
+          color="primary"
+          variant="shadow"
+          className="mb-8"
+          startContent={<FaDownload />}
+        >
+          Descarga Ahora
+        </Button>
+        {/* <Image
+          src="/app-screenshot.png"
+          alt="NyaUwU App Screenshot"
+          width={800}
+          height={450}
+          className="rounded-lg shadow-2xl"
+        /> */}
+      </div>
+    </div>
   );
 }
