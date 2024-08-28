@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "@nextui-org/button";
-import { FaDownload } from "react-icons/fa";
+import { Icon } from "@iconify/react";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
           color="primary"
           variant="shadow"
           className="mb-8"
-          startContent={<FaDownload />}
+          startContent={<Icon icon="mdi:download" />}
         >
           Descarga Ahora
         </Button>

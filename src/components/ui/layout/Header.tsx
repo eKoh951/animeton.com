@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Button } from "@nextui-org/button";
-import { FaChevronRight, FaDownload } from "react-icons/fa";
+import { Icon } from "@iconify/react";
 
 export default function Header() {
   return (
     <header className="py-4 px-6 flex justify-between items-center">
       <Link href="/" className="text-2xl font-bold flex items-center">
-        <FaChevronRight className="mr-2 text-3xl" />
-        NyaUwU.com
+        <Icon icon="mdi:cat" className="mr-2 text-2xl" />
+        nyaUwU.com
       </Link>
       <Button
         as={Link}
@@ -15,7 +15,7 @@ export default function Header() {
         color="primary"
         variant="shadow"
         className="bg-purple-600 hover:bg-purple-700"
-        startContent={<FaDownload />}
+        startContent={<Icon icon="mdi:download" />}
       >
         Descarga la App
       </Button>
