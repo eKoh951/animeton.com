@@ -9,8 +9,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NyaUwU.com",
-  description: "La mejor app para ver anime en Windows",
+  title: "Animeton.com",
+  description: "Tu App de anime en Español",
 };
 
 export default function RootLayout({
@@ -22,8 +22,12 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <Providers>
-          <Header />
-          <main className="flex-grow">{children}</main>
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-grow purple-dark text-foreground bg-background">
+              {children}
+            </main>
+          </div>
           <Footer />
         </Providers>
       </body>
