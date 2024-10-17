@@ -4,28 +4,28 @@ import { Icon } from "@iconify/react";
 
 export default function Header() {
   return (
-    <header className="py-4 px-6 shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 py-3 px-6 bg-background/60 backdrop-blur-md border-b border-primary-700/20">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="w-1/3">
+        <div className="flex-1">
           {/* Espacio vacío a la izquierda para mantener el balance */}
         </div>
-        <div className="w-1/3 flex justify-center">
+        <div className="flex-1 flex justify-center">
           <Link href="/" className="text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+            <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500">
               ANIMETON
-              <span className="text-sm sm:text-base md:text-lg font-normal text-white">
+              <span className="text-sm sm:text-base md:text-lg font-normal text-primary-200">
                 .com
               </span>
             </h1>
           </Link>
         </div>
-        <div className="w-1/3 flex justify-end">
+        <div className="flex-1 flex justify-end">
           <Button
-            className="font-bold"
             as={Link}
             href="/download"
             color="primary"
-            variant="bordered"
+            variant="ghost"
+            className="text-primary-300 hover:text-primary-200"
             startContent={<Icon icon="mdi:download" />}
           >
             Descarga la App

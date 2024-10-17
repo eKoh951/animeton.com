@@ -4,6 +4,7 @@ import { Button } from "@nextui-org/button";
 import { Icon } from "@iconify/react";
 import { Tooltip } from "@nextui-org/tooltip";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 interface Feature {
   icon?: string;
@@ -56,7 +57,7 @@ export default function Home() {
               size="lg"
               startContent={<Icon icon="mdi:discord" className="text-2xl" />}
               as="a"
-              href="https://discord.gg/fYNNmKJJfk"
+              href={siteConfig.links.discord}
               target="_blank"
               variant="bordered"
             >
@@ -104,7 +105,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
       >
         <Button
           isIconOnly
-          color="warning"
+          color="primary"
           variant="faded"
           aria-label="Más información"
           className="rounded-full ml-2 min-w-8 w-8 min-h-8 h-8"
