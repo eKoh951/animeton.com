@@ -15,10 +15,9 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex space-x-6">
-          <FooterLink href={siteConfig.links.discord} icon="mdi:discord" />
-          <FooterLink href={siteConfig.links.instagram} icon="mdi:instagram" />
-          <FooterLink href={siteConfig.links.tiktok} icon="mdi:tiktok" />
-          <FooterLink href={siteConfig.links.youtube} icon="mdi:youtube" />
+          {Object.entries(siteConfig.links).map(([key, value]) => (
+            <FooterLink key={key} href={value} icon={`mdi:${key} `} />
+          ))}
         </div>
       </div>
     </footer>
