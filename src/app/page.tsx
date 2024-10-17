@@ -45,7 +45,7 @@ export default function Home() {
               className="font-bold w-full sm:w-auto"
               size="lg"
               color="primary"
-              variant="shadow"
+              variant="solid"
               href="/download"
               as={Link}
               startContent={<Icon icon="mdi:download" className="text-2xl" />}

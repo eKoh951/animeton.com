@@ -11,7 +11,8 @@ export default function Header() {
         </div>
         <div className="flex-1 flex justify-center">
           <Link href="/" className="text-center">
-            <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500">
+            {/* text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 */}
+            <h1 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
               ANIMETON
               <span className="text-sm sm:text-base md:text-lg font-normal text-primary-200">
                 .com

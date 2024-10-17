@@ -22,18 +22,18 @@ const config = {
             background: "#0D001A",
             foreground: "#ffffff",
             primary: {
-              50: "#FEECFE",
-              100: "#FDD5F9",
-              200: "#FCADF9",
-              300: "#F182F6",
-              400: "#DD62ED",
-              500: "#c031e2",
-              600: "#9823C2",
-              700: "#7318A2",
-              800: "#520F83",
-              900: "#3B096C",
-              DEFAULT: "#DD62ED",
-              foreground: "#1A0B2E",
+              50: "#faf5ff",
+              100: "#f3e8ff",
+              200: "#e9d5ff",
+              300: "#d8b4fe",
+              400: "#c084fc",
+              500: "#a855f7",
+              600: "#9333ea",
+              700: "#7e22ce",
+              800: "#6b21a8",
+              900: "#581c87",
+              DEFAULT: "#c084fc",
+              foreground: "#0D001A",
             },
             secondary: {
               50: "#FFF0F7",
@@ -68,6 +68,6 @@ const config = {
       },
     }),
   ],
-} satisfies Config;
+};
 
 export default config;
