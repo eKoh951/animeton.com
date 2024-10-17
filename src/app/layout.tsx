@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Animeton.com",
-  description: "Tu App de anime en Español",
+  description: "La App de Windows para ver anime en Español",
 };
 
 export default function RootLayout({

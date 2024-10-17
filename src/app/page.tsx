@@ -24,6 +24,7 @@ import {
   Exo_2,
   Quicksand,
 } from "next/font/google";
+import { metadata } from "./layout";
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
             ANIMETON
           </h1>
           <h2 className={`text-3xl mb-4 ${font.font.className}`}>
-            La App de Windows para ver anime en Español
+            {metadata.description}
           </h2>
         </div>
       ))}
