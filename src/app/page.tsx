@@ -5,7 +5,7 @@ import { Tooltip } from "@nextui-org/tooltip";
 import Link from "next/link";
 
 interface Feature {
-  icon: string;
+  icon?: string;
   label: string;
   text: string;
   comingSoon?: boolean;
@@ -16,19 +16,20 @@ interface FeatureItemProps extends Feature {}
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen px-6 py-12">
+    <div className="flex items-center justify-center px-6 py-16">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl uppercase font-bold mb-6">Animeton</h1>
+        <h1 className="text-6xl uppercase font-bold mb-6">Animeton</h1>
         <h2 className="text-4xl font-bold mb-6">
           La App de Windows para ver anime en Español
         </h2>
         <p className="text-xl mb-8">
           Únete a nuestra{" "}
-          <span className="font-bold text-orange-300">beta cerrada</span> y
-          ayúdanos a mejorar la experiencia con tu feedback. Tendrás acceso
-          exclusivo a la app y serás parte de nuestra comunidad en Discord,
-          donde podrás compartir tus ideas y sugerencias.
+          <span className="font-bold text-secondary-300">beta cerrada</span> y
+          ayúdanos a mejorar la app con tu feedback. Tendrás acceso exclusivo a
+          la app y serás parte de nuestra comunidad en Discord, donde podrás
+          compartir tus ideas y sugerencias.
         </p>
+        <p className="text-xl mb-4">Descubre nuestras características:</p>
         <ul className="text-left text-lg mb-8 inline-block">
           {features.map((feature, index) => (
             <FeatureItem key={index} {...feature} />
@@ -53,6 +54,7 @@ export default function Home() {
               startContent={<Icon icon="mdi:discord" className="text-2xl" />}
               as="a"
               href="https://discord.gg/fYNNmKJJfk"
+              target="_blank"
               variant="bordered"
             >
               Únete a nuestro Discord
@@ -72,18 +74,22 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
   tooltip = "",
 }) => (
   <li className="mb-2 flex items-center">
-    <Button
-      isIconOnly
-      color="primary"
-      variant="faded"
-      aria-label={label}
-      className="rounded-full mr-2"
-    >
-      <Icon icon={icon} className="text-2xl" />
-    </Button>
+    {icon && (
+      <Button
+        isIconOnly
+        color="primary"
+        variant="faded"
+        aria-label={label}
+        className="rounded-full mr-2"
+      >
+        <Icon icon={icon} className="text-2xl" />
+      </Button>
+    )}
     {text}
     {comingSoon && (
-      <span className="text-yellow-500 font-semibold ml-2">(próximamente)</span>
+      <span className="text-secondary-300 font-semibold ml-2">
+        (próximamente)
+      </span>
     )}
     {tooltip && (
       <Tooltip
@@ -109,9 +115,9 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
 
 const features: Feature[] = [
   {
-    icon: "mdi:lightning-bolt",
-    label: "Ver anime",
-    text: "Solo da 1 click y a ver anime 😎🍿",
+    icon: "mdi:cash-off",
+    label: "Gratis",
+    text: "Todo completamente gratis",
   },
   {
     icon: "mdi:block-helper",
@@ -129,21 +135,22 @@ const features: Feature[] = [
     text: "Seguir viendo automático",
     comingSoon: true,
     tooltip:
-      "Seguir viendo automático: Descarga y notifica nuevos episodios semanales. Continúa tu anime sin interrupciones, al estilo Netflix.",
+      "Seguir viendo automático: Descarga y notifica nuevos episodios semanales. Continúa tu anime sin interrupciones, al estilo de Netflix.",
   },
+  // {
+  //   icon: "mdi:account-group",
+  //   label: "Watch parties",
+  //   text: "Watch parties con amigos",
+  //   comingSoon: true,
+  //   tooltip:
+  //     "Imaginate ver anime junto a tus amigos pero cada quien en su PC, como si estuvieran en llamada por discord",
+  // },
   {
-    icon: "mdi:account-group",
-    label: "Watch parties",
-    text: "Watch parties con amigos",
-    comingSoon: true,
-    tooltip:
-      "Imaginate ver anime junto a tus amigos pero cada quien en su PC, como si estuvieran en llamada por discord",
-  },
-  {
-    icon: "mdi:lightbulb",
+    // icon: "mdi:lightbulb",
     label: "Sugerencias",
     text: "Te gustaría ver algo en especial?",
-    comingSoon: true,
-    tooltip: "Podrás sugerir nuevas funcionalidades para la app",
+    // comingSoon: true,
+    tooltip:
+      "Podrás sugerir nuevas funcionalidades para la app con tu feedback.",
   },
 ];
