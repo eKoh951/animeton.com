@@ -17,21 +17,22 @@ interface FeatureItemProps extends Feature {}
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center px-4 sm:px-6 py-8 sm:py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl uppercase font-bold mb-4 sm:mb-6">
-          Animeton
-        </h1>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+    <div className="flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-[90vh]">
+      <div className="max-w-4xl md:mr-80">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
           La App de Windows para ver anime en Español
-        </h2>
-        <p className="text-lg sm:text-xl mb-6">
-          Únete a nuestra{" "}
-          <span className="font-bold text-secondary-300">beta cerrada</span> y
-          ayúdanos a mejorar la app con tu feedback. Tendrás acceso exclusivo a
-          la app y serás parte de nuestra comunidad en Discord, donde podrás
-          compartir tus ideas y sugerencias.
-        </p>
+        </h1>
+        <div className="max-w-3xl text-lg sm:text-xl mb-6">
+          <p>
+            Únete a nuestra{" "}
+            <span className="font-bold text-secondary-300">beta cerrada</span> y
+            ayúdanos a mejorar la app con tu feedback.
+          </p>
+          <p>
+            Tendrás acceso exclusivo a la app y serás parte de nuestra comunidad
+            en Discord, donde podrás compartir tus ideas y sugerencias.
+          </p>
+        </div>
         <ul className="text-left text-base sm:text-lg mb-6 sm:mb-8 inline-block">
           {features.map((feature, index) => (
             <FeatureItem key={index} {...feature} />
@@ -42,11 +43,11 @@ export default function Home() {
             <Button
               className="font-bold w-full sm:w-auto"
               size="lg"
-              color="secondary"
+              color="primary"
               variant="shadow"
-              startContent={<Icon icon="mdi:download" className="text-2xl" />}
               href="/download"
               as={Link}
+              startContent={<Icon icon="mdi:download" className="text-2xl" />}
             >
               Descarga la App
             </Button>

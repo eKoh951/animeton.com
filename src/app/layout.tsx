@@ -22,11 +22,9 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${exo2.className} flex flex-col min-h-screen`}>
         <Providers>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen purple-dark text-foreground bg-background">
             <Header />
-            <main className="flex-grow purple-dark text-foreground bg-background">
-              {children}
-            </main>
+            <main className="flex-grow ">{children}</main>
           </div>
           <Footer />
         </Providers>
