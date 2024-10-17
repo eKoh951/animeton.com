@@ -2,6 +2,69 @@ import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import { Icon } from "@iconify/react";
 import { Tooltip } from "@nextui-org/tooltip";
+import {
+  Roboto,
+  Montserrat,
+  Poppins,
+  Playfair_Display,
+  Oswald,
+  Lato,
+  Raleway,
+  Merriweather,
+  Ubuntu,
+  Bebas_Neue,
+  Roboto_Condensed,
+  Open_Sans,
+  Source_Sans_3,
+  Nunito,
+  Rubik,
+  Inter,
+  Roboto_Mono,
+  Fira_Sans,
+  Exo_2,
+  Quicksand,
+} from "next/font/google";
+
+export default function Home() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12">
+      {fonts.map((font, index) => (
+        <div key={index} className="max-w-4xl mx-auto mb-8">
+          <h2 className={`text-2xl mb-2 ${font.font.className}`}>
+            Font: {font.name}
+          </h2>
+          <h1 className={`text-5xl font-bold mb-2 ${font.font.className}`}>
+            ANIMETON
+          </h1>
+          <h2 className={`text-3xl mb-4 ${font.font.className}`}>
+            La App de Windows para ver anime en Español
+          </h2>
+        </div>
+      ))}
+      <div className="max-w-4xl mx-auto">
+        <p className="text-xl mb-8">
+          Animeton te trae la mejor experiencia para ver anime en Windows.
+          Descarga nuestra app y sumérgete en un mundo de anime sin límites.
+        </p>
+        <ul className="text-left text-lg mb-8 inline-block">
+          {features.map((feature, index) => (
+            <FeatureItem key={index} {...feature} />
+          ))}
+        </ul>
+        <div className="mt-8">
+          <Button
+            size="lg"
+            color="primary"
+            variant="shadow"
+            startContent={<Icon icon="mdi:download" />}
+          >
+            Descarga Ahora
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 interface Feature {
   icon: string;
@@ -93,39 +156,27 @@ const features: Feature[] = [
     label: "Sugerencias",
     text: "Te gustaría ver algo en especial?",
     comingSoon: true,
-    tooltip:
-      "Pronto podrás sugerir nuevos animes o funcionalidades para la app",
+    tooltip: "Podrás sugerir nuevas funcionalidades para la app",
   },
 ];
 
-export default function Home() {
-  return (
-    <div className="flex items-center justify-center min-h-screen px-6 py-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold mb-6">Animeton</h1>
-        <h1 className="text-4xl font-bold mb-6">
-          La App de Windows para ver anime en Español
-        </h1>
-        <p className="text-xl mb-8">
-          Animeton te trae la mejor experiencia para ver anime en Windows.
-          Descarga nuestra app y sumérgete en un mundo de anime sin límites.
-        </p>
-        <ul className="text-left text-lg mb-8 inline-block">
-          {features.map((feature, index) => (
-            <FeatureItem key={index} {...feature} />
-          ))}
-        </ul>
-        <div className="mt-8">
-          <Button
-            size="lg"
-            color="primary"
-            variant="shadow"
-            startContent={<Icon icon="mdi:download" />}
-          >
-            Descarga Ahora
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-}
+const ubuntu = Ubuntu({ subsets: ["latin"], weight: ["400", "700"] });
+const lato = Lato({ subsets: ["latin"], weight: ["400", "700"] });
+const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700"] });
+const rubik = Rubik({ subsets: ["latin"], weight: ["400", "700"] });
+const firaSans = Fira_Sans({ subsets: ["latin"], weight: ["400", "700"] });
+const exo2 = Exo_2({ subsets: ["latin"], weight: ["400", "700"] });
+const quicksand = Quicksand({ subsets: ["latin"], weight: ["400", "700"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
+const robotoMono = Roboto_Mono({ subsets: ["latin"], weight: ["400", "700"] });
+const sourceSans3 = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const fonts = [
+  { name: "Nunito", font: nunito },
+  { name: "Quicksand", font: quicksand },
+  { name: "Exo 2", font: exo2 },
+  { name: "Ubuntu", font: ubuntu },
+];
