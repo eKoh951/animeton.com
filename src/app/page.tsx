@@ -151,6 +151,6 @@ const features: Feature[] = [
     text: "Te gustaría ver algo en especial?",
     // comingSoon: true,
     tooltip:
-      "Podrás sugerir nuevas funcionalidades para la app con tu feedback.",
+      "Con tu feedback podrás sugerir nuevas funcionalidades para la app.",
   },
 ];
