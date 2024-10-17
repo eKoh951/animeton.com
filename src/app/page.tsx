@@ -1,3 +1,4 @@
+import React, { ReactNode } from "react";
 import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import { Icon } from "@iconify/react";
@@ -7,7 +8,7 @@ import Link from "next/link";
 interface Feature {
   icon?: string;
   label: string;
-  text: string;
+  text: ReactNode;
   comingSoon?: boolean;
   tooltip?: string;
 }
@@ -24,22 +25,19 @@ export default function Home() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
           La App de Windows para ver anime en Español
         </h2>
-        <p className="text-lg sm:text-xl mb-6 sm:mb-8">
+        <p className="text-lg sm:text-xl mb-6">
           Únete a nuestra{" "}
           <span className="font-bold text-secondary-300">beta cerrada</span> y
           ayúdanos a mejorar la app con tu feedback. Tendrás acceso exclusivo a
           la app y serás parte de nuestra comunidad en Discord, donde podrás
           compartir tus ideas y sugerencias.
         </p>
-        <p className="text-lg sm:text-xl mb-4">
-          Descubre nuestras características:
-        </p>
         <ul className="text-left text-base sm:text-lg mb-6 sm:mb-8 inline-block">
           {features.map((feature, index) => (
             <FeatureItem key={index} {...feature} />
           ))}
         </ul>
-        <div className="mt-6 sm:mt-8">
+        <div className="mt-2">
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               className="font-bold w-full sm:w-auto"
@@ -84,9 +82,9 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
         color="primary"
         variant="faded"
         aria-label={label}
-        className="rounded-full mr-2"
+        className="rounded-full mr-2 min-w-8 w-8 min-h-8 h-8"
       >
-        <Icon icon={icon} className="text-2xl" />
+        <Icon icon={icon} className="text-xl" />
       </Button>
     )}
     {text}
@@ -108,7 +106,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
           color="warning"
           variant="faded"
           aria-label="Más información"
-          className="rounded-full ml-2"
+          className="rounded-full ml-2 min-w-8 w-8 min-h-8 h-8"
         >
           <Icon icon="mdi:question-mark" />
         </Button>
@@ -121,39 +119,41 @@ const features: Feature[] = [
   {
     icon: "mdi:cash-off",
     label: "Gratis",
-    text: "Todo completamente gratis",
+    text: (
+      <p>
+        Completamente <u>gratis</u>
+      </p>
+    ),
   },
   {
     icon: "mdi:block-helper",
     label: "Sin publicidad",
-    text: "Sin publicidad molesta",
+    text: (
+      <p>
+        <u>Sin publicidad</u> molesta
+      </p>
+    ),
   },
   {
     icon: "mdi:high-definition",
     label: "Calidad HD",
-    text: "Calidad en 1080p",
+    text: (
+      <p>
+        Calidad en <u>1080p</u>
+      </p>
+    ),
   },
   {
     icon: "mdi:play-circle",
     label: "Seguir viendo automático",
-    text: "Seguir viendo automático",
+    text: <p>Seguir viendo automático</p>,
     comingSoon: true,
     tooltip:
       "Seguir viendo automático: Descarga y notifica nuevos episodios semanales. Continúa tu anime sin interrupciones, al estilo de Netflix.",
   },
-  // {
-  //   icon: "mdi:account-group",
-  //   label: "Watch parties",
-  //   text: "Watch parties con amigos",
-  //   comingSoon: true,
-  //   tooltip:
-  //     "Imaginate ver anime junto a tus amigos pero cada quien en su PC, como si estuvieran en llamada por discord",
-  // },
   {
-    // icon: "mdi:lightbulb",
     label: "Sugerencias",
-    text: "Te gustaría ver algo en especial?",
-    // comingSoon: true,
+    text: <>Te gustaría ver algo en especial?</>,
     tooltip:
       "Con tu feedback podrás sugerir nuevas funcionalidades para la app.",
   },
