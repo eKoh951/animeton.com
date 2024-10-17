@@ -6,8 +6,7 @@ export default function Header() {
   return (
     <header className="py-4 px-6 flex justify-between items-center">
       <Link href="/" className="text-2xl font-bold flex items-center">
-        <Icon icon="mdi:cat" className="mr-2 text-2xl" />
-        Animeton.com
+        ANIMETON.com
       </Link>
       <Button
         as={Link}

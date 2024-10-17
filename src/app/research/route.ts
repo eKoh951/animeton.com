@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
 export async function GET() {
-  redirect('https://research.typeform.com/to/CTiu4zvj');
+  redirect("https://research.typeform.com/to/CTiu4zvj");
 }

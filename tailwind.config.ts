@@ -9,7 +9,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@nextui-org/theme/dist/components/(button|popover|ripple|spinner).js"
+    "./node_modules/@nextui-org/theme/dist/components/(button|popover|ripple|spinner).js",
   ],
   prefix: "",
   plugins: [
@@ -17,7 +17,7 @@ const config = {
     nextui({
       themes: {
         "purple-dark": {
-          extend: "dark", // <- inherit default values from dark theme
+          extend: "dark",
           colors: {
             background: "#0D001A",
             foreground: "#ffffff",
@@ -34,6 +34,20 @@ const config = {
               900: "#FEECFE",
               DEFAULT: "#DD62ED",
               foreground: "#ffffff",
+            },
+            secondary: {
+              50: "#FFF3E0",
+              100: "#FFE0B2",
+              200: "#FFCC80",
+              300: "#FFB74D",
+              400: "#FFA726",
+              500: "#FF9800",
+              600: "#FB8C00",
+              700: "#F57C00",
+              800: "#EF6C00",
+              900: "#E65100",
+              DEFAULT: "#FF9800",
+              foreground: "#000000",
             },
             focus: "#F182F6",
           },

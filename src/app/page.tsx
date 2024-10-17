@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import { Icon } from "@iconify/react";
 import { Tooltip } from "@nextui-org/tooltip";
+import Link from "next/link";
 
 interface Feature {
   icon: string;
@@ -12,6 +13,56 @@ interface Feature {
 }
 
 interface FeatureItemProps extends Feature {}
+
+export default function Home() {
+  return (
+    <div className="flex items-center justify-center min-h-screen px-6 py-12">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-5xl uppercase font-bold mb-6">Animeton</h1>
+        <h2 className="text-4xl font-bold mb-6">
+          La App de Windows para ver anime en Español
+        </h2>
+        <p className="text-xl mb-8">
+          Únete a nuestra{" "}
+          <span className="font-bold text-orange-300">beta cerrada</span> y
+          ayúdanos a mejorar la experiencia con tu feedback. Tendrás acceso
+          exclusivo a la app y serás parte de nuestra comunidad en Discord,
+          donde podrás compartir tus ideas y sugerencias.
+        </p>
+        <ul className="text-left text-lg mb-8 inline-block">
+          {features.map((feature, index) => (
+            <FeatureItem key={index} {...feature} />
+          ))}
+        </ul>
+        <div className="mt-8">
+          <div className="mt-8 flex gap-4">
+            <Button
+              className="font-bold"
+              size="lg"
+              color="secondary"
+              variant="shadow"
+              startContent={<Icon icon="mdi:download" className="text-2xl " />}
+              href="/download"
+              as={Link}
+            >
+              Descarga la App
+            </Button>
+            <Button
+              className="font-bold border-[#8b9ee1] text-[#8b9ee1] hover:bg-[#5865F2] hover:text-white"
+              size="lg"
+              startContent={<Icon icon="mdi:discord" className="text-2xl" />}
+              as="a"
+              href="https://discord.gg/fYNNmKJJfk"
+              variant="bordered"
+            >
+              Únete a nuestro Discord
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const FeatureItem: React.FC<FeatureItemProps> = ({
   icon,
@@ -96,35 +147,3 @@ const features: Feature[] = [
     tooltip: "Podrás sugerir nuevas funcionalidades para la app",
   },
 ];
-
-export default function Home() {
-  return (
-    <div className="flex items-center justify-center min-h-screen px-6 py-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl uppercase font-bold mb-6">Animeton</h1>
-        <h2 className="text-4xl font-bold mb-6">
-          La App de Windows para ver anime en Español
-        </h2>
-        <p className="text-xl mb-8">
-          Animeton te trae la mejor experiencia para ver anime en Windows.
-          Descarga nuestra app y sumérgete en un mundo de anime sin límites.
-        </p>
-        <ul className="text-left text-lg mb-8 inline-block">
-          {features.map((feature, index) => (
-            <FeatureItem key={index} {...feature} />
-          ))}
-        </ul>
-        <div className="mt-8">
-          <Button
-            size="lg"
-            color="primary"
-            variant="shadow"
-            startContent={<Icon icon="mdi:download" />}
-          >
-            Descarga Ahora
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-}
