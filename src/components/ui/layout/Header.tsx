@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import Logo from "../Logo";
+import { siteConfig } from "@/config/site";
 
 export default function Header() {
   return (
@@ -15,11 +16,12 @@ export default function Header() {
         </div>
         <div className="flex-1 flex justify-end">
           <GradientButton
+            size="md"
+            href={siteConfig.links.discord}
             as={Link}
-            href="/download"
-            startContent={<Icon icon="mdi:download" />}
+            endContent={<Icon icon="mdi:discord" className="text-2xl" />}
           >
-            Descarga la App
+            Únete a la Beta Cerrada en Discord
           </GradientButton>
         </div>
       </div>

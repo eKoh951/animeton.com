@@ -16,7 +16,7 @@ export const GradientButton: React.FC<GradientButtonProps> = ({
   gradientTo = "to-secondary-700",
   hoverGradientFrom = "from-primary-600",
   hoverGradientTo = "to-secondary-600",
-  startContent,
+  endContent,
   ...props
 }) => {
   const baseClassName =
@@ -28,15 +28,15 @@ export const GradientButton: React.FC<GradientButtonProps> = ({
     <Button
       className={cn(baseClassName, gradientClassName, className)}
       {...props}
-      startContent={
-        startContent && React.isValidElement(startContent)
-          ? React.cloneElement(startContent as React.ReactElement, {
+      endContent={
+        endContent && React.isValidElement(endContent)
+          ? React.cloneElement(endContent as React.ReactElement, {
               className: cn(
-                "transition-transform duration-300 group-hover:translate-y-1",
-                (startContent as React.ReactElement).props.className
+                "transition-transform duration-300 group-hover:scale-110",
+                (endContent as React.ReactElement).props.className
               ),
             })
-          : startContent
+          : endContent
       }
     >
       <span className="relative z-10">{children}</span>

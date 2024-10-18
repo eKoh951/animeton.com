@@ -56,23 +56,12 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4">
             <GradientButton
               size="lg"
-              href="/download"
-              as={Link}
-              startContent={<Icon icon="mdi:download" className="text-2xl" />}
-            >
-              Descarga la App
-            </GradientButton>
-            <Button
-              className="font-bold border-[#8b9ee1] text-[#8b9ee1] hover:bg-[#5865F2] hover:text-white w-full sm:w-auto"
-              size="lg"
-              startContent={<Icon icon="mdi:discord" className="text-2xl" />}
-              as="a"
               href={siteConfig.links.discord}
-              target="_blank"
-              variant="bordered"
+              as={Link}
+              endContent={<Icon icon="mdi:discord" className="text-2xl" />}
             >
-              Únete a nuestro Discord
-            </Button>
+              Únete a la Beta Cerrada en Discord
+            </GradientButton>
           </div>
         </div>
       </div>
