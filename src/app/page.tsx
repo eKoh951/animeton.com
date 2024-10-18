@@ -8,6 +8,7 @@ import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import GradualSpacing from "@/components/ui/gradual-spacing";
 import styles from "./page.module.css";
+import { GradientButton } from "@/components/ui/GradientButton";
 
 interface Feature {
   icon?: string;
@@ -29,9 +30,12 @@ export default function Home() {
     >
       <div className="max-w-4xl md:mr-80">
         <GradualSpacing
-          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+          className="hidden md:block text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
           text="La App de Windows para ver anime en Español"
         />
+        <h1 className="md:hidden text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
+          La App de Windows para ver anime en Español
+        </h1>
         <div className="max-w-3xl text-lg sm:text-xl mb-6">
           <p>
             Únete a nuestra{" "}
@@ -50,17 +54,14 @@ export default function Home() {
         </ul>
         <div className="mt-2">
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              className="font-bold w-full sm:w-auto"
+            <GradientButton
               size="lg"
-              color="primary"
-              variant="solid"
               href="/download"
               as={Link}
               startContent={<Icon icon="mdi:download" className="text-2xl" />}
             >
               Descarga la App
-            </Button>
+            </GradientButton>
             <Button
               className="font-bold border-[#8b9ee1] text-[#8b9ee1] hover:bg-[#5865F2] hover:text-white w-full sm:w-auto"
               size="lg"
