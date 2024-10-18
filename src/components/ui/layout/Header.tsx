@@ -14,15 +14,8 @@ export default function Header() {
         <div className="flex-1 flex md:justify-center">
           <Logo size="lg" />
         </div>
-        <div className="flex-1 flex justify-end">
-          <GradientButton
-            size="md"
-            href={siteConfig.links.discord}
-            as={Link}
-            endContent={<Icon icon="mdi:discord" className="text-2xl" />}
-          >
-            Únete a la Beta Cerrada en Discord
-          </GradientButton>
+        <div className="hidden md:block flex-1">
+          {/* Espacio vacío a la derecha para mantener el balance en desktop */}
         </div>
       </div>
     </header>
