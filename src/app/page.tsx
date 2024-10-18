@@ -6,6 +6,8 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
+import GradualSpacing from "@/components/ui/gradual-spacing";
+import styles from "./page.module.css";
 
 interface Feature {
   icon?: string;
@@ -19,11 +21,17 @@ interface FeatureItemProps extends Feature {}
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-[90vh]">
+    <div
+      className={cn(
+        "flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-[90vh]",
+        styles.main
+      )}
+    >
       <div className="max-w-4xl md:mr-80">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-          La App de Windows para ver anime en Español
-        </h1>
+        <GradualSpacing
+          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+          text="La App de Windows para ver anime en Español"
+        />
         <div className="max-w-3xl text-lg sm:text-xl mb-6">
           <p>
             Únete a nuestra{" "}
