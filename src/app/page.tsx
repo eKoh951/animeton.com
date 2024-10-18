@@ -56,6 +56,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4">
             <GradientButton
               size="lg"
+              target="_blank"
               href={siteConfig.links.discord}
               as={Link}
               endContent={<Icon icon="mdi:discord" className="text-2xl" />}
