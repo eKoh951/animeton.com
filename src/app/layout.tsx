@@ -5,6 +5,8 @@ import Header from "@/components/ui/layout/Header";
 import Footer from "@/components/ui/layout/Footer";
 
 import "./globals.css";
+import BackgroundVideo from "@/components/ui/BackgroundVideo";
+import { siteConfig } from "@/config/site";
 
 const exo2 = Exo_2({ subsets: ["latin"] });
 
@@ -25,7 +27,12 @@ export default function RootLayout({
           <div className="purple-dark text-foreground bg-background">
             <div className="flex flex-col min-h-screen">
               <Header />
-              <main className="flex-grow mt-20  bg-gradient-to-br from-background via-primary-900/10 to-secondary-900/10">
+              <BackgroundVideo
+                videoSrc={siteConfig.links.video}
+                opacity={0.7}
+                filter="brightness(40%) blur(2px)"
+              />
+              <main className="flex-grow mt-16 bg-gradient-to-br from-background via-primary-900/10 to-secondary-900/10 z-[1]">
                 {children}
               </main>
             </div>

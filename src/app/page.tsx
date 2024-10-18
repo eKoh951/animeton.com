@@ -20,47 +20,50 @@ interface FeatureItemProps extends Feature {}
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-[90vh]">
-      <div className="max-w-4xl md:mr-80">
-        <GradualSpacing
-          className="hidden md:block text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
-          text="La App de Windows para ver anime en Español"
-        />
-        <h1 className="md:hidden text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
-          La App de Windows para ver anime en Español
-        </h1>
-        <div className="max-w-3xl text-lg sm:text-xl mb-6">
-          <p>
-            Únete a nuestra{" "}
-            <span className="font-bold text-secondary-300">beta cerrada</span> y
-            ayúdanos a mejorar la app con tu feedback.
-          </p>
-          <p>
-            Tendrás acceso exclusivo a la app y serás parte de nuestra comunidad
-            en Discord, donde podrás compartir tus ideas y sugerencias.
-          </p>
-        </div>
-        <ul className="text-left text-base sm:text-lg mb-6 sm:mb-8 inline-block">
-          {features.map((feature, index) => (
-            <FeatureItem key={index} {...feature} />
-          ))}
-        </ul>
-        <div className="mt-2">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <GradientButton
-              size="lg"
-              target="_blank"
-              href={siteConfig.links.discord}
-              as={Link}
-              endContent={<Icon icon="mdi:discord" className="text-2xl" />}
-            >
-              Únete a la Beta Cerrada en Discord
-            </GradientButton>
+    <>
+      <div className="flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-[90vh]">
+        <div className="max-w-4xl md:mr-80">
+          <GradualSpacing
+            className="hidden md:block text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+            text="La App de Windows para ver anime en Español"
+          />
+          <h1 className="md:hidden text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
+            La App de Windows para ver anime en Español
+          </h1>
+          <div className="max-w-3xl text-lg sm:text-xl mb-6">
+            <p>
+              Únete a nuestra{" "}
+              <span className="font-bold text-secondary-300">beta cerrada</span>{" "}
+              y ayúdanos a mejorar la app con tu feedback.
+            </p>
+            <p>
+              Tendrás acceso exclusivo a la app y serás parte de nuestra
+              comunidad en Discord, donde podrás compartir tus ideas y
+              sugerencias.
+            </p>
+          </div>
+          <ul className="text-left text-base sm:text-lg mb-6 sm:mb-8 inline-block">
+            {features.map((feature, index) => (
+              <FeatureItem key={index} {...feature} />
+            ))}
+          </ul>
+          <div className="mt-2">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <GradientButton
+                size="lg"
+                target="_blank"
+                href={siteConfig.links.discord}
+                as={Link}
+                endContent={<Icon icon="mdi:discord" className="text-2xl" />}
+              >
+                Únete a la Beta Cerrada en Discord
+              </GradientButton>
+            </div>
           </div>
         </div>
+        <DotPattern className="[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] color-primary-400" />
       </div>
-      <DotPattern className="[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] color-primary-400" />
-    </div>
+    </>
   );
 }
 
