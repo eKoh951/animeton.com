@@ -1,10 +1,11 @@
 import React, { ReactNode } from "react";
-import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import { Icon } from "@iconify/react";
 import { Tooltip } from "@nextui-org/tooltip";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import DotPattern from "@/components/ui/dot-pattern";
+import { cn } from "@/lib/utils";
 
 interface Feature {
   icon?: string;
@@ -66,6 +67,11 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <DotPattern
+        className={cn(
+          "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] color-primary-400"
+        )}
+      />
     </div>
   );
 }
