@@ -5,9 +5,7 @@ import { Tooltip } from "@nextui-org/tooltip";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import DotPattern from "@/components/ui/dot-pattern";
-import { cn } from "@/lib/utils";
 import GradualSpacing from "@/components/ui/gradual-spacing";
-import styles from "./page.module.css";
 import { GradientButton } from "@/components/ui/GradientButton";
 
 interface Feature {
@@ -22,12 +20,7 @@ interface FeatureItemProps extends Feature {}
 
 export default function Home() {
   return (
-    <div
-      className={cn(
-        "flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-[90vh]",
-        styles.main
-      )}
-    >
+    <div className="flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-[90vh]">
       <div className="max-w-4xl md:mr-80">
         <GradualSpacing
           className="hidden md:block text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
@@ -66,11 +59,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <DotPattern
-        className={cn(
-          "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] color-primary-400"
-        )}
-      />
+      <DotPattern className="[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] color-primary-400" />
     </div>
   );
 }
