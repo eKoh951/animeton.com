@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Button } from "@nextui-org/button";
 import { Icon } from "@iconify/react";
 import { GradientButton } from "@/components/ui/GradientButton";
+import Logo from "../Logo";
 
 export default function Header() {
   return (
@@ -11,14 +11,7 @@ export default function Header() {
           {/* Espacio vacío a la izquierda para mantener el balance en desktop */}
         </div>
         <div className="flex-1 flex md:justify-center">
-          <Link href="/" className="text-left md:text-center">
-            <h1 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">
-              ANIMETON
-              <span className="text-sm sm:text-base md:text-lg font-normal text-primary-200">
-                .com
-              </span>
-            </h1>
-          </Link>
+          <Logo size="lg" />
         </div>
         <div className="flex-1 flex justify-end">
           <GradientButton
