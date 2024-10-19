@@ -6,7 +6,7 @@ export const siteConfig = {
     "https://api.github.com/repos/Tiahui-Tech/webtorrent-animeton/releases",
   links: {
     video:
-      "https://tmeuhgeua9b1jf7t.public.blob.vercel-storage.com/background-MqdL4KpQhMzRVJU277bgPXVjdMhkPe.mp4",
+      "https://f005.backblazeb2.com/file/animeton-com-public/background.mp4",
     discord: "https://discord.gg/fYNNmKJJfk",
     instagram: "https://instagram.com/animeton_la",
     tiktok: "https://tiktok.com/@animeton_la",
