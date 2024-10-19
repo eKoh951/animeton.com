@@ -3,10 +3,10 @@ import { Button } from "@nextui-org/button";
 import { Icon } from "@iconify/react";
 import { Tooltip } from "@nextui-org/tooltip";
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
 import DotPattern from "@/components/ui/dot-pattern";
 import GradualSpacing from "@/components/ui/gradual-spacing";
 import { GradientButton } from "@/components/ui/GradientButton";
+import { siteConfig } from "@/config/site";
 
 interface Feature {
   icon?: string;
@@ -18,7 +18,7 @@ interface Feature {
 
 interface FeatureItemProps extends Feature {}
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <div className="flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-[90vh]">
