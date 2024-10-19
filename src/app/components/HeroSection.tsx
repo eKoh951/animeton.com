@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import { GradientButton } from "@/components/ui/GradientButton";
 import GradualSpacing from "@/components/ui/gradual-spacing";
 import { siteConfig } from "@/config/site";
+import { FeatureItems } from "./FeatureItems";
 
 export const HeroSection: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ export const HeroSection: React.FC = () => {
           en Discord, donde podrás compartir tus ideas y sugerencias.
         </p>
       </div>
+      <FeatureItems />
       <div className="mt-2">
         <div className="flex flex-col sm:flex-row gap-4">
           <GradientButton
