@@ -16,7 +16,6 @@ export default async function Home() {
     <>
       <div className="flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-[90vh]">
         <HeroSection />
-        <DotPattern className="[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] color-primary-400" />
       </div>
       {changelog && <Changelog releases={changelog} />}
     </>

@@ -103,7 +103,7 @@ const features: Feature[] = [
 ];
 
 export const FeatureItems: React.FC = () => (
-  <ul className="text-left text-base sm:text-lg mb-6 sm:mb-8 inline-block">
+  <ul className="text-left text-base sm:text-lg inline-block">
     {features.map((feature, index) => (
       <FeatureItem key={index} {...feature} />
     ))}
