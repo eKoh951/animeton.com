@@ -1,3 +1,4 @@
+import GradientBadge from "../GradientBadge";
 import Logo from "../Logo";
 
 export default function Header() {
@@ -7,8 +8,9 @@ export default function Header() {
         <div className="hidden md:block flex-1">
           {/* Espacio vacío a la izquierda para mantener el balance en desktop */}
         </div>
-        <div className="flex-1 flex md:justify-center">
+        <div className="flex items-baseline gap-2">
           <Logo size="lg" variant="header" />
+          <GradientBadge text="beta" size="sm" />
         </div>
         <div className="hidden md:block flex-1">
           {/* Espacio vacío a la derecha para mantener el balance en desktop */}
