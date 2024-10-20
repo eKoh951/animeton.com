@@ -6,7 +6,7 @@ import GradientBadge from "@/components/ui/GradientBadge";
 
 export const HeroSection: React.FC = () => {
   return (
-    <div className="max-w-4xl md:mr-80 ">
+    <div className="max-w-4xl md:mr-80">
       <GradualSpacing
         className="hidden md:block text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
         text="La App de Windows para ver anime en Español"

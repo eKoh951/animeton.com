@@ -32,7 +32,7 @@ export default function RootLayout({
                 opacity={0.7}
                 filter="brightness(40%) blur(2px)"
               />
-              <main className="flex-grow md:mt-16 bg-gradient-to-br from-background via-primary-900/10 to-secondary-900/10 z-[1]">
+              <main className="flex-grow mt-24 md:mt-16 bg-gradient-to-br from-background via-primary-900/10 to-secondary-900/10 z-[1]">
                 {children}
               </main>
             </div>
