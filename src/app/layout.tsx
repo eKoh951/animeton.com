@@ -1,3 +1,5 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import type { Metadata } from "next";
 import { Exo_2 } from "next/font/google";
 import { Providers } from "./providers";
@@ -38,6 +40,7 @@ export default function RootLayout({
             </div>
             <Footer />
           </div>
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
