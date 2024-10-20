@@ -8,6 +8,8 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Button } from "@nextui-org/button";
 import { ParsedRelease } from "@/lib/getReleasesInfo";
+import ShowMoreVersionsButton from "./ShowMoreVersionsButton";
+import ViewAllReleasesLink from "./ViewAllReleasesLink";
 
 interface ChangelogProps {
   releases: ParsedRelease[] | null;
@@ -103,16 +105,10 @@ export const Changelog: React.FC<ChangelogProps> = ({ releases }) => {
       ))}
       {olderReleases.length > 0 && (
         <div className="text-center mt-8">
-          <Button
-            color="primary"
-            variant="ghost"
-            onPress={() => setShowOlderReleases(!showOlderReleases)}
-            className="bg-background/30 backdrop-blur-md"
-          >
-            {showOlderReleases
-              ? "Ocultar versiones anteriores"
-              : "Ver versiones anteriores"}
-          </Button>
+          <ShowMoreVersionsButton
+            showOlderReleases={showOlderReleases}
+            onToggle={() => setShowOlderReleases(!showOlderReleases)}
+          />
         </div>
       )}
       {showOlderReleases && (
@@ -127,17 +123,7 @@ export const Changelog: React.FC<ChangelogProps> = ({ releases }) => {
         </div>
       )}
       <div className="text-center my-8">
-        <Link
-          href={siteConfig.githubReleasesUrl
-            .replace("api.", "")
-            .replace("/repos", "")
-            .replace("/releases", "/releases")}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary-300 hover:text-primary-200 transition-colors"
-        >
-          Ver todos los releases en GitHub
-        </Link>
+        <ViewAllReleasesLink />
       </div>
     </div>
   );
