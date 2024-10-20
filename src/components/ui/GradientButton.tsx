@@ -33,7 +33,7 @@ export const GradientButton: React.FC<GradientButtonProps> = ({
         endContent && React.isValidElement(endContent)
           ? React.cloneElement(endContent as React.ReactElement, {
               className: cn(
-                "duration-300 ease-in-out group-hover:translate-x-[4px]",
+                "duration-250 ease-in-out group-hover:translate-x-[4px]",
                 (endContent as React.ReactElement).props.className
               ),
             })
