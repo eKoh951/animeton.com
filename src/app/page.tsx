@@ -1,6 +1,6 @@
 import React from "react";
 import DotPattern from "@/components/ui/dot-pattern";
-import { HeroSection } from "./components/HeroSection";
+import { HeroSection } from "./_components/HeroSection";
 import { Changelog } from "@/components/ui/Changelog";
 import { getChangelog } from "@/lib/getChangelog";
 

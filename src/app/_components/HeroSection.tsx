@@ -1,10 +1,7 @@
 import React from "react";
-import Link from "next/link";
-import { Icon } from "@iconify/react";
-import { GradientButton } from "@/components/ui/GradientButton";
 import GradualSpacing from "@/components/ui/gradual-spacing";
-import { siteConfig } from "@/config/site";
 import { FeatureItems } from "./FeatureItems";
+import { JoinDiscordButton } from "./JoinDiscordButton";
 
 export const HeroSection: React.FC = () => {
   return (
@@ -32,15 +29,7 @@ export const HeroSection: React.FC = () => {
       </div>
       <div className="mt-2">
         <div className="flex flex-col sm:flex-row gap-4">
-          <GradientButton
-            size="lg"
-            target="_blank"
-            href={siteConfig.links.discord}
-            as={Link}
-            endContent={<Icon icon="mdi:discord" className="text-2xl" />}
-          >
-            Únete a la Beta Cerrada en Discord
-          </GradientButton>
+          <JoinDiscordButton />
         </div>
       </div>
     </div>
