@@ -107,6 +107,7 @@ export const Changelog: React.FC<ChangelogProps> = ({ releases }) => {
             color="primary"
             variant="ghost"
             onPress={() => setShowOlderReleases(!showOlderReleases)}
+            className="bg-background/30 backdrop-blur-md"
           >
             {showOlderReleases
               ? "Ocultar versiones anteriores"
@@ -114,15 +115,18 @@ export const Changelog: React.FC<ChangelogProps> = ({ releases }) => {
           </Button>
         </div>
       )}
-      {showOlderReleases &&
-        olderReleases.map((release, index) => (
-          <AnimatedRelease
-            key={release.version}
-            release={release}
-            index={index + 3}
-          />
-        ))}
-      <div className="text-center mt-8">
+      {showOlderReleases && (
+        <div className="mt-8">
+          {olderReleases.map((release, index) => (
+            <AnimatedRelease
+              key={release.version}
+              release={release}
+              index={index + 3}
+            />
+          ))}
+        </div>
+      )}
+      <div className="text-center my-8">
         <Link
           href={siteConfig.githubReleasesUrl
             .replace("api.", "")
