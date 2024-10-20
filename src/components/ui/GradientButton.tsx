@@ -21,8 +21,7 @@ export const GradientButton: React.FC<GradientButtonProps> = ({
   endContent,
   ...props
 }) => {
-  const baseClassName =
-    "font-bold transition-all duration-300 ease-in-out transform hover:shadow-xl group relative overflow-hidden";
+  const baseClassName = "font-bold hover:shadow-xl group relative";
   const gradientClassName = `bg-gradient-to-r ${gradientFrom} ${gradientTo}`;
   const hoverGradientClassName = `${hoverGradientFrom} ${hoverGradientTo}`;
 
@@ -34,17 +33,19 @@ export const GradientButton: React.FC<GradientButtonProps> = ({
         endContent && React.isValidElement(endContent)
           ? React.cloneElement(endContent as React.ReactElement, {
               className: cn(
-                "transition-transform duration-300 group-hover:scale-110",
+                "duration-300 ease-in-out group-hover:translate-x-[4px]",
                 (endContent as React.ReactElement).props.className
               ),
             })
           : endContent
       }
     >
-      <span className="relative z-10">{children}</span>
+      <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">
+        {children}
+      </span>
       <span
         className={cn(
-          "absolute inset-0 bg-gradient-to-r opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100",
+          "absolute bg-gradient-to-r duration-300",
           hoverGradientClassName
         )}
       ></span>

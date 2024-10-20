@@ -4,6 +4,7 @@ import { GradientButton } from "@/components/ui/GradientButton";
 import { Icon } from "@iconify/react";
 import posthog from "posthog-js";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 export const JoinDiscordButton: React.FC = () => {
   const trackDownloadClick = () => {
@@ -17,7 +18,7 @@ export const JoinDiscordButton: React.FC = () => {
     <GradientButton
       size="lg"
       target="_blank"
-      href="https://discord.com"
+      href={siteConfig.links.discord}
       as={Link}
       endContent={<Icon icon="mdi:discord" className="text-2xl" />}
       onClick={trackDownloadClick}
