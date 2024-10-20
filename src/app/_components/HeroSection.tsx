@@ -2,6 +2,7 @@ import React from "react";
 import GradualSpacing from "@/components/ui/gradual-spacing";
 import { FeatureItems } from "./FeatureItems";
 import { JoinDiscordButton } from "./JoinDiscordButton";
+import { BetaBadge } from "@/components/ui/BetaBadge";
 
 export const HeroSection: React.FC = () => {
   return (
@@ -15,10 +16,9 @@ export const HeroSection: React.FC = () => {
       </h1>
       <div className="bg-background/60 backdrop-blur-md border border-primary-700/20 rounded-lg p-6 mb-6">
         <div className="max-w-3xl text-lg sm:text-xl mb-6">
-          <p>
-            Únete a nuestra{" "}
-            <span className="font-bold text-secondary-300">beta cerrada</span> y
-            ayúdanos a mejorar la app con tu feedback.
+          <p className="flex items-center mb-4">
+            <span className="mr-3">Únete a nuestra</span>
+            <BetaBadge className="text-base" />
           </p>
           <p>
             Tendrás acceso exclusivo a la app y serás parte de nuestra comunidad
