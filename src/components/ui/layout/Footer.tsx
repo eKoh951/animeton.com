@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="py-8 px-6 bg-background/60 backdrop-blur-md border-t border-primary-700/20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
-          <Logo />
+          <Logo size="md" variant="footer" />
         </div>
         <div className="flex space-x-6">
           {Object.entries(siteConfig.links).map(([key, value]) => (

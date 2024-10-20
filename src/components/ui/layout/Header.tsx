@@ -1,8 +1,4 @@
-import Link from "next/link";
-import { Icon } from "@iconify/react";
-import { GradientButton } from "@/components/ui/GradientButton";
 import Logo from "../Logo";
-import { siteConfig } from "@/config/site";
 
 export default function Header() {
   return (
@@ -12,7 +8,7 @@ export default function Header() {
           {/* Espacio vacío a la izquierda para mantener el balance en desktop */}
         </div>
         <div className="flex-1 flex md:justify-center">
-          <Logo size="lg" />
+          <Logo size="lg" variant="header" />
         </div>
         <div className="hidden md:block flex-1">
           {/* Espacio vacío a la derecha para mantener el balance en desktop */}
