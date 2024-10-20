@@ -1,8 +1,9 @@
 import React from "react";
-import DotPattern from "@/components/ui/dot-pattern";
 import { HeroSection } from "./_components/HeroSection";
 import { Changelog } from "@/components/ui/Changelog";
 import { getChangelog } from "@/lib/getChangelog";
+
+export const revalidate = 60;
 
 export default async function Home() {
   const changelog = await getChangelog();
