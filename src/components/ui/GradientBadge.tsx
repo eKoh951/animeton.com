@@ -16,8 +16,8 @@ export const BetaBadge: React.FC<BetaBadgeProps> = ({
 }) => {
   const sizeClasses = {
     sm: "text-xs px-2 py-1",
-    md: "text-sm px-3 py-1.5",
-    lg: "text-base px-4 py-2",
+    md: "text-sm px-2.5 py-1",
+    lg: "text-base px-3 py-1",
   };
 
   return (
