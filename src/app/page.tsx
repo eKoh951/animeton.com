@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-[90vh]">
+      <div className="flex items-center justify-center max-w-6xl mx-auto px-4 md:px-6 h-full py-6 md:py-0 md:h-[90vh]">
         <HeroSection />
       </div>
       {changelog && <Changelog releases={changelog} />}
