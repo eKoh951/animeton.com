@@ -31,7 +31,6 @@ export default function RootLayout({
               <Header />
               <BackgroundVideo
                 videoSrc={siteConfig.links.video}
-                placeholderImage="/images/video-first-frame.jpg"
                 opacity={0.7}
                 filter="brightness(40%) blur(2px)"
               />

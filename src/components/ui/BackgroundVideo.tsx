@@ -6,14 +6,12 @@ import Image from "next/image";
 
 interface BackgroundVideoProps {
   videoSrc: string;
-  placeholderImage?: string; // Usa la imagen generada por defecto
   opacity?: number; // Valor entre 0 y 1
   filter?: string; // Por ejemplo: "blur(5px)" o "brightness(50%)"
 }
 
 const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
   videoSrc,
-  placeholderImage = "/images/video-first-frame.jpg",
   opacity = 0.5,
   filter = "brightness(50%)",
 }) => {
@@ -56,7 +54,7 @@ const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
     const handleLoadedData = () => {
       console.log("Video data loaded");
       setIsVideoLoaded(true);
-      video.currentTime = 0;
+      video.currentTime = 0.1;
     };
 
     video.addEventListener("loadeddata", handleLoadedData);
@@ -74,7 +72,7 @@ const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
           ?.play()
           .then(() => setShowVideo(true))
           .catch((error) => console.error("Error playing video:", error));
-      }, 1000);
+      }, 2000);
 
       return () => clearTimeout(timeoutId);
     }
@@ -86,15 +84,6 @@ const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
 
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-hidden z-[0]">
-      {!showVideo && (
-        <Image
-          src={placeholderImage}
-          alt="Video placeholder"
-          layout="fill"
-          objectFit="cover"
-          style={{ opacity, filter }}
-        />
-      )}
       {videoBlob && (
         <video
           ref={videoRef}
