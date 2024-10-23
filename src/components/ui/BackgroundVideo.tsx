@@ -2,15 +2,18 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import Image from "next/image";
 
 interface BackgroundVideoProps {
   videoSrc: string;
+  placeholderImage?: string; // Usa la imagen generada por defecto
   opacity?: number; // Valor entre 0 y 1
   filter?: string; // Por ejemplo: "blur(5px)" o "brightness(50%)"
 }
 
 const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
   videoSrc,
+  placeholderImage = "/images/video-first-frame.jpg",
   opacity = 0.5,
   filter = "brightness(50%)",
 }) => {
@@ -18,16 +21,17 @@ const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoBlob, setVideoBlob] = useState<string | null>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     const fetchVideo = async () => {
       try {
+        console.log("Fetching video from:", videoSrc);
         const response = await fetch(videoSrc);
-
         if (!response.ok) throw new Error("Network response was not ok");
-
         const blob = await response.blob();
         const videoUrl = URL.createObjectURL(blob);
+        console.log("Video fetched and blob URL created");
         setVideoBlob(videoUrl);
       } catch (error) {
         console.error("Error fetching video:", error);
@@ -50,6 +54,7 @@ const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
     if (!video || !videoBlob) return;
 
     const handleLoadedData = () => {
+      console.log("Video data loaded");
       setIsVideoLoaded(true);
       video.currentTime = 0;
     };
@@ -63,9 +68,11 @@ const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
 
   useEffect(() => {
     if (isVideoLoaded && videoRef.current) {
+      console.log("Starting video playback");
       const timeoutId = setTimeout(() => {
         videoRef.current
           ?.play()
+          .then(() => setShowVideo(true))
           .catch((error) => console.error("Error playing video:", error));
       }, 1000);
 
@@ -73,26 +80,37 @@ const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
     }
   }, [isVideoLoaded]);
 
-  if (!isDesktop || !videoBlob) {
+  if (!isDesktop) {
     return null;
   }
 
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-hidden z-[0]">
-      <video
-        ref={videoRef}
-        className="absolute min-w-full min-h-full object-cover"
-        loop
-        muted
-        playsInline
-        style={{
-          opacity: opacity,
-          filter: filter,
-        }}
-      >
-        <source src={videoBlob} type="video/mp4" />
-        Tu navegador no soporta el tag de video.
-      </video>
+      {!showVideo && (
+        <Image
+          src={placeholderImage}
+          alt="Video placeholder"
+          layout="fill"
+          objectFit="cover"
+          style={{ opacity, filter }}
+        />
+      )}
+      {videoBlob && (
+        <video
+          ref={videoRef}
+          className={`absolute min-w-full min-h-full object-cover transition-opacity duration-500 ${showVideo ? "opacity-100" : "opacity-0"}`}
+          loop
+          muted
+          playsInline
+          style={{
+            opacity: opacity,
+            filter: filter,
+          }}
+        >
+          <source src={videoBlob} type="video/mp4" />
+          Tu navegador no soporta el tag de video.
+        </video>
+      )}
     </div>
   );
 };
