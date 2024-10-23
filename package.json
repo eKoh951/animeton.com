@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "preinstall": "node -e \"const v = process.versions.node; const major = parseInt(v.split('.')[0], 10); if(major !== 20) { console.log('\\x1b[31m\\x1b[1m%s\\x1b[0m', '>>> Error: Node version 20 is required.\\nCurrent version: ' + v + '\\n'); process.exit(1); } else { console.log('\\x1b[32m\\x1b[1m%s\\x1b[0m', 'Success: Using Node version: ' + v + '\\n'); }\"",
-    "generate-first-frame": "ts-node-esm src/scripts/generateVideoFirstFrame.mts"
+    "generate-first-frame": "ts-node src/scripts/generateVideoFirstFrame.js"
   },
   "dependencies": {
     "@iconify/react": "^5.0.2",

@@ -3,11 +3,10 @@ import ffmpegStatic from "ffmpeg-static";
 import path from "path";
 import fs from "fs";
 
-const { siteConfig } = require("../config/site.ts");
-
 ffmpeg.setFfmpegPath(ffmpegStatic);
 
-const videoUrl = siteConfig.links.video;
+const videoUrl =
+  "https://link.storjshare.io/s/jun54hyn6siquty3ldekn4fvnbga/animeton-com/background-2.webm?wrap=0";
 const outputPath = path.join(
   process.cwd(),
   "public",
@@ -24,7 +23,7 @@ if (!fs.existsSync(outputDir)) {
 console.log("Generando el primer frame del video...");
 
 ffmpeg(videoUrl)
-  .inputOptions(["-ss 00:00:00"]) // Busca el primer frame
+  .inputOptions(["-ss 00:00:00.000"]) // Busca el frame en mm:ss.milisegundo
   .outputOptions(["-vframes 1"]) // Extrae solo un frame
   .output(outputPath)
   .on("end", () => {
