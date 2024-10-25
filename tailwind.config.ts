@@ -2,7 +2,7 @@
 import { nextui } from "@nextui-org/theme";
 import type { Config } from "tailwindcss";
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",

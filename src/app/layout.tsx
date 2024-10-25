@@ -9,12 +9,11 @@ import Footer from "@/components/ui/layout/Footer";
 import "./globals.css";
 import BackgroundVideo from "@/components/ui/BackgroundVideo";
 import { siteConfig } from "@/config/site";
-
-const exo2 = Exo_2({ subsets: ["latin"] });
+import { branding } from "@/config/branding";
 
 export const metadata: Metadata = {
-  title: "Animeton.com",
-  description: "La App de Windows para ver anime en Español",
+  title: branding.name,
+  description: branding.slogan,
 };
 
 export default function RootLayout({
@@ -24,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${exo2.className} flex flex-col min-h-screen`}>
+      <body
+        className={`${branding.fonts.primary.className} flex flex-col min-h-screen`}
+      >
         <Providers>
           <div className="purple-dark text-foreground bg-background">
             <div className="flex flex-col min-h-screen">
