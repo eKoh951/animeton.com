@@ -1,4 +1,5 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 import type { Metadata } from "next";
 import { Exo_2 } from "next/font/google";
@@ -42,6 +43,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <SpeedInsights />
+          <Analytics />
         </Providers>
       </body>
     </html>
