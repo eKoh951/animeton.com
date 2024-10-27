@@ -45,7 +45,7 @@ export const Logo: React.FC<LogoProps> = ({
       <div
         className={cn(
           sizeClasses[size],
-          "font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600",
+          "font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-700",
           className
         )}
       >
